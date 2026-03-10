@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaDIContainer.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaDIContainer.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaDIContainer">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Grid RowDefinitions="* Auto"
+          ColumnDefinitions="Auto Auto">
+        <DataGrid
+            ItemsSource="{Binding Persons}"
+            GridLinesVisibility="All"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Почта" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+    
+</Window>
