@@ -27,6 +27,11 @@
                 <DataGridTextColumn Header="Возраст" Binding="{Binding Age}"/>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <Button Grid.Column="1"
+                Content="Добавить сотрудника"
+                Command="{Binding AddPerson}"
+                />
     </Grid>
     
 </Window>
