@@ -30,8 +30,10 @@
         
         <Button Grid.Column="1"
                 Content="Добавить сотрудника"
-                Command="{Binding AddPerson}"
-                />
+                Command="{Binding AddPerson}"/>
+        <Button Grid.Row="1" Grid.Column="1"
+                Content="Статистика"
+                Command="{Binding ShowStatsCommand}"/>
     </Grid>
     
 </Window>

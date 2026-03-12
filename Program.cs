@@ -28,7 +28,7 @@ sealed class Program
                 services.AddTransient<MainWindowViewModel>();
                 services.AddSingleton<IPersonRepository, PersonRepository>();
                 // При Transient создавался бы каждый раз новый Persons
-                services.AddSingleton<StatisticsService>();
+                services.AddSingleton<IStatisticsService, StatisticsService>();
             }).Build();
         
         BuildAvaloniaApp(host.Services)
